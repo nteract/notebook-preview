@@ -3,21 +3,14 @@ import React from 'react';
 import CodeCell from './code-cell';
 import MarkdownCell from './markdown-cell';
 
-const Cell = (props) => {
-  const cell = props.cell;
-  const type = cell.get('cell_type');
-  return (
-    <div
-      className="cell"
-    >
-      {
-      type === 'markdown' ?
-        <MarkdownCell {...props} /> :
-        <CodeCell {...props} />
-      }
-    </div>
-  );
-};
+const Cell = (props) =>
+  <div className="cell">
+    {
+    props.cell.get('cell_type') === 'markdown' ?
+      <MarkdownCell {...props} /> :
+      <CodeCell {...props} />
+    }
+  </div>;
 
 Cell.propTypes = {
   cell: React.PropTypes.any,
