@@ -1,3 +1,4 @@
+/* eslint-disable no-multi-str */
 import * as commutable from 'commutable';
 
 export const dummy = '{"cells":[{"cell_type":"markdown","metadata":{},\

@@ -17,7 +17,7 @@ export default class Editor extends React.Component {
     return (
       <div className="cell_editor">
         <CodeMirror
-          value={this.state.source}
+          value={this.props.input}
           ref="codemirror"
           className="cell_cm"
           options={options}
