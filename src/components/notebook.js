@@ -72,7 +72,7 @@ class Notebook extends React.Component {
 
 Notebook.propTypes = {
   displayOrder: React.PropTypes.instanceOf(Immutable.List),
-  notebook: React.PropTypes.any.isRequired,
+  notebook: React.PropTypes.instanceOf(Immutable.Map),
   transforms: React.PropTypes.instanceOf(Immutable.Map),
 };
 
