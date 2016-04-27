@@ -4,7 +4,9 @@
   "description": "Lightweight preview of a notebook, nteract style",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src --out-dir lib"
+    "build": "babel src --out-dir lib",
+    "pretest": "npm run build",
+    "test": "mocha -r test/setup.js --compilers js:babel-core/register 'test/**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,7 @@
     "mocha": "^2.4.5",
     "nyc": "^6.4.0",
     "react": "^15.0.1",
+    "react-addons-test-utils": "^15.0.1",
     "react-dom": "^15.0.1"
   },
   "peerDependencies": {
@@ -36,6 +39,7 @@
   },
   "dependencies": {
     "codemirror": "^5.14.2",
+    "commutable": "^0.6.0",
     "react-codemirror": "^0.2.6",
     "react-jupyter-display-area": "^0.4.0",
     "remark": "^4.2.2",
