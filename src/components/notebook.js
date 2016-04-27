@@ -8,6 +8,8 @@ require('codemirror/mode/markdown/markdown');
 require('codemirror/mode/python/python');
 // TODO: consider dynamic require of languages like in nteract/nteract
 
+import Cell from './cell';
+
 class Notebook extends React.Component {
   constructor() {
     super();
