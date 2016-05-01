@@ -1,1 +1,5 @@
-Little demo work of `notebook-preview`, extended from react hot boilerplate.
+Little demo work of `notebook-preview`.
+
+Clone this repo, open index.html.
+
+
