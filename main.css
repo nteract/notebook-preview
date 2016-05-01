@@ -70,22 +70,6 @@ td {
     transition: all .1s ease-in-out;
 }
 
-.cell:hover
-{
-    box-shadow: 1px 1px 3px rgba(0,0,0,.12), -1px -1px 3px rgba(0,0,0,.12);
-}
-
-.cell.focused {
-    box-shadow: 3px 3px 9px rgba(0,0,0,.12), -3px -3px 9px rgba(0,0,0,.12);
-}
-
-.cell:hover .input_area .cell_inputs,
-.cell:active .input_area .cell_inputs
-{
-    background-color: var(--cell-bg-hover);
-}
-
-
 .cell:focus .input_area .cell_inputs,
 .cell.focused .input_area .cell_inputs
 {
@@ -126,19 +110,6 @@ td {
     border: none;
     outline: none;
     background: none;
-}
-
-.cell_toolbar button i
-{
-    font-size: 16px;
-    line-height: 1;
-
-    color: var(--toolbar-button);
-}
-
-.cell_toolbar button i:hover
-{
-    color: var(--toolbar-button-hover);
 }
 
 .cell_markdown.rendered
@@ -245,11 +216,6 @@ td {
   line-height: 1;
 
   color: var(--toolbar-button);
-}
-
-.creator-tool button i:hover
-{
-  color: var(--toolbar-button-hover);
 }
 
 .creator-tool .creator-label {
