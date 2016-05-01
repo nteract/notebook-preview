@@ -347,3 +347,8 @@ li.CodeMirror-hint-active {
   background: var(--cm-hint-bg-active);
   color: var(--cm-hint-color-active);
 }
+
+
+.CodeMirror-cursor {
+  display: none;
+}
