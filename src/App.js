@@ -1,39 +1,27 @@
 import React, { Component } from 'react';
-import { NICE, SUPER_NICE } from './colors';
 
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { counter: 0 };
-    this.interval = setInterval(() => this.tick(), 1000);
-  }
+const dummy = '{"cells":[{"cell_type":"markdown","metadata":{},\
+"source":["## The Notable Nteract Notebook\\n","\\n","**It\'s a notebook!**\\n"]},\
+{"cell_type":"code","execution_count":11,"metadata":{"collapsed":false},\
+"outputs":[{"data":{"text/html":["<h1>Multiple</h1>"],\
+"text/plain":["<IPython.core.display.HTML object>"]},"metadata":{},"output_type":"display_data"}],\
+"source":["import IPython\\n","\\n","from IPython.display import HTML\\n",\
+"from IPython.display import Markdown\\n","from IPython.display import display\\n","\\n",\
+"display(HTML(\'<h1>Multiple</h1>\'))\\n","display(HTML(\'<p>Display Elements</p>\'))\\n",\
+"display(Markdown(\'**awesome**\'))\\n","\\n","print(\'hey\')\\n","42"]}],\
+"metadata":{"kernelspec":{"display_name":"Python 3","language":"python","name":"python3"},\
+"language_info":{"codemirror_mode":{"name":"ipython","version":3},"file_extension":".py",\
+"mimetype":"text/x-python","name":"python","nbconvert_exporter":"python",\
+"pygments_lexer":"ipython3","version":"3.5.1"}},"nbformat":4,"nbformat_minor":0}';
 
-  tick() {
-    this.setState({
-      counter: this.state.counter + this.props.increment
-    });
-  }
+const notebookJSON = JSON.parse(dummy);
 
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    return (
-      <h1 style={{ color: this.props.color }}>
-        Counter ({this.props.increment}): {this.state.counter}
-      </h1>
-    );
-  }
-}
+import NotebookPreview from 'notebook-preview';
 
 export class App extends Component {
   render() {
     return (
-      <div>
-        <Counter increment={1} color={NICE} />
-        <Counter increment={5} color={SUPER_NICE} />
-      </div>
+      <NotebookPreview notebook={notebookJSON}/>
     );
   }
 }
