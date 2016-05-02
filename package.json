@@ -37,6 +37,7 @@
     "express": "^4.13.3",
     "json-loader": "^0.5.4",
     "rimraf": "^2.4.3",
+    "surge": "^0.17.7",
     "webpack": "^1.12.9"
   },
   "dependencies": {
