@@ -33821,8 +33821,11 @@
 	
 	var includes = __webpack_require__(195);
 	
-	var gistIDs = ['0787d2fd8b898368503bd9469b50383e', '35fdfae490529b47e7ea2c44c144c593', '1ba9b5d825af9e349bc3'];
+	var gistIDs = ['53f2d7bbc69936bd7a4131c0890fc61d', 'ee778e32b8e62cf634929abe229a8555', '7eadc20426451a0604e26e6f084cac02', '0a9389389ec5ff303c5d5fbfa6bea021', 'b71d96c48326a0e05904a5ad4a96d2b5', '93239f6b97237abf117a348a56afc9e2'];
 	
+	// '0787d2fd8b898368503bd9469b50383e',
+	// '35fdfae490529b47e7ea2c44c144c593',
+	// '1ba9b5d825af9e349bc3',
 	// 'd8ac62bc0726ecdc0f22', // FIXME: notebook has HTML inside Markdown
 	// 'b057942206c4e3d98153', // FIXME: notebook has inline maths
 	var gistID = gistIDs[Math.floor(Math.random() * gistIDs.length)];
