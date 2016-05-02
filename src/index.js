@@ -31,8 +31,6 @@ fetch(`https://api.github.com/gists/${gistID}`)
           // If truncated, fetch direct
           return fetch(fileResponse.raw_url)
                   .then((resp) => resp.json())
-                  .then((x) => { console.log(x); return x })
-
         }
 
         const nbString = fileResponse.content;
