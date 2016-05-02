@@ -6,7 +6,9 @@
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "predeploy": "npm run build",
+    "deploy": "surge -d nb.surge.sh -p ."
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
   },
   "dependencies": {
     "codemirror": "^5.14.2",
+    "lodash.includes": "^4.1.2",
     "normalize.css": "^4.1.1",
     "notebook-preview": "0.0.3",
     "nteract-assets": "^1.0.0",
