@@ -27,7 +27,6 @@ const CodeCell = (props) =>
 CodeCell.propTypes = {
   cell: React.PropTypes.instanceOf(Immutable.Map).isRequired,
   displayOrder: React.PropTypes.instanceOf(Immutable.List).isRequired,
-  id: React.PropTypes.string,
   language: React.PropTypes.string,
   theme: React.PropTypes.string,
   transforms: React.PropTypes.instanceOf(Immutable.Map),

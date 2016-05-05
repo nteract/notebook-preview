@@ -42,11 +42,9 @@ class Notebook extends React.Component {
         <Cell
           cell={cellMap.get(id)}
           language={this.getLanguageMode()}
-          id={id}
           key={id}
           displayOrder={this.props.displayOrder}
           transforms={this.props.transforms}
-          moveCell={this.moveCell}
         />
       </div>);
   }
