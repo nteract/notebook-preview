@@ -2,9 +2,6 @@ import React from 'react';
 
 import CodeMirror from 'react-codemirror';
 
-import 'codemirror/addon/hint/show-hint';
-import 'codemirror/addon/hint/anyword-hint';
-
 export default class Editor extends React.Component {
   render() {
     const options = {
