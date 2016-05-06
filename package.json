@@ -44,7 +44,7 @@
     "codemirror": "^5.14.2",
     "lodash.includes": "^4.1.2",
     "normalize.css": "^4.1.1",
-    "notebook-preview": "0.0.6",
+    "notebook-preview": "0.1.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7"
   }
