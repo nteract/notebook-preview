@@ -28,14 +28,16 @@ const Main = React.createClass({
 });
 
 const Notebook = React.createClass({
+  getInitialState: function() {
+    return {nbJSON: null};
+  },
   componentDidMount: function() {
     this.setState({
       nbJSON: fetchFromGist(this.props.params.gistId)
     });
   },
   render: function() {
-    console.log('inside Notebook render');
-    return <NotebookPreview notebook={this.state.nbJSON}/>
+    return <NotebookPreview notebook={this.state.nbJSON}/>;
   }
 });
 
