@@ -17,7 +17,11 @@ const gistIDs = [
 
 const Main = React.createClass({
   render: function() {
-    return <h1>Loading a Notebook....</h1>;
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    );
   }
 });
 
@@ -59,4 +63,4 @@ render((
       <Route path="gist/:gistId" component={Notebook}/>
     </Route>
   </Router>
-), document.body);
+), document.getElementById('root'));
