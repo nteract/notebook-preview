@@ -15,8 +15,14 @@ const gistIDs = [
   '93239f6b97237abf117a348a56afc9e2',
 ];
 
+const Main = React.createClass({
+  render: function() {
+    return <h1>Loading a Notebook....</h1>;
+  }
+});
+
 const Notebook = React.createClass({
-  componentDidMount() {
+  componentDidMount: function() {
     this.setState({
       nbJSON: fetch(`https://api.github.com/gists/${this.props.params.gistId}`)
         .then((data) => data.json())
@@ -40,14 +46,17 @@ const Notebook = React.createClass({
         })
     });
   },
-  render() {
+  render: function() {
+    console.log('inside Notebook render');
     return <NotebookPreview notebook={this.state.nbJSON}/>
   }
 });
 
 render((
   <Router history={browserHistory}>
-    <IndexRedirect to={'gist/' + gistIDs[Math.floor(Math.random() * gistIDs.length)]}/>
-    <Route path="gist/:gistId" component={Notebook}/>
+    <Route path="/" component={Main}>
+      <IndexRedirect to={'gist/' + gistIDs[Math.floor(Math.random() * gistIDs.length)]}/>
+      <Route path="gist/:gistId" component={Notebook}/>
+    </Route>
   </Router>
 ), document.body);
