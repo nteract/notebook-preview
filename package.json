@@ -6,6 +6,7 @@
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
+    "start": "webpack-dev-server --inline --content-base .",
     "lint": "eslint src",
     "predeploy": "npm run build",
     "deploy": "surge -d nb.surge.sh -p ."
@@ -38,7 +39,8 @@
     "json-loader": "^0.5.4",
     "rimraf": "^2.4.3",
     "surge": "^0.17.7",
-    "webpack": "^1.12.9"
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
     "codemirror": "^5.14.2",
@@ -46,6 +48,7 @@
     "normalize.css": "^4.1.1",
     "notebook-preview": "0.1.0",
     "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react-dom": "^0.14.7",
+    "react-router": "^2.4.0"
   }
 }
