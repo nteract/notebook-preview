@@ -15,14 +15,6 @@ const gistIDs = [
   '93239f6b97237abf117a348a56afc9e2',
 ];
 
-const Main = React.createClass({
-  render() {
-    return <h1>
-      Loading Notebook...
-    </h1>
-  }
-});
-
 const Notebook = React.createClass({
   componentDidMount() {
     this.setState({
@@ -55,9 +47,7 @@ const Notebook = React.createClass({
 
 render((
   <Router history={browserHistory}>
-    <Route path="/" component={Main}>
-      <IndexRedirect to={'gist/' + gistIDs[Math.floor(Math.random() * gistIDs.length)]}/>
-      <Route path="gist/:gistId" component={Notebook}/>
-    </Route>
+    <IndexRedirect to={'gist/' + gistIDs[Math.floor(Math.random() * gistIDs.length)]}/>
+    <Route path="gist/:gistId" component={Notebook}/>
   </Router>
 ), document.body);
