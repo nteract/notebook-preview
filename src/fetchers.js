@@ -2,7 +2,7 @@ const includes = require('lodash.includes');
 
 export function fetchFromGist(gistId) {
   var path = "https://api.github.com/gists/" + gistId;
-  fetch(path)
+  return fetch(path)
     .then((data) => data.json())
     .then((ghResponse) => {
       for (var file in ghResponse.files) {
@@ -18,8 +18,5 @@ export function fetchFromGist(gistId) {
           return nbJSON;
         }
       }
-    })
-    .then((nbJSON) => {
-      return nbJSON;
     })
 }
