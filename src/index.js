@@ -29,7 +29,7 @@ const Main = React.createClass({
 
 const Notebook = React.createClass({
   getInitialState: function() {
-    return {nbJSON: ''};
+    return {nbJSON: null};
   },
   componentDidMount: function() {
     fetchFromGist(this.props.params.gistId).then((nbJSON) => {
@@ -39,7 +39,11 @@ const Notebook = React.createClass({
     });
   },
   render: function() {
-    return <NotebookPreview notebook={this.state.nbJSON}/>;
+    if (this.state.nbJSON) {
+      return <NotebookPreview notebook={this.state.nbJSON}/>;
+    } else {
+      return <h1>Loading Notebook...</h1>;
+    }
   }
 });
 
