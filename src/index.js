@@ -5,9 +5,13 @@ import * as commutable from 'commutable';
 import Immutable from 'immutable';
 
 const NotebookPreview = (props) => {
-  const nb = props.notebook;
-  const notebook = Immutable.Map.isMap(nb) ? nb : commutable.fromJS(nb);
-  return <Notebook notebook={notebook} />;
+  if (props.notebook) {
+    const nb = props.notebook;
+    const notebook = Immutable.Map.isMap(nb) ? nb : commutable.fromJS(nb);
+    return <Notebook notebook={notebook} />;
+  } else {
+    return <h1>Notebook not provided. </h1>;
+  }
 };
 
 NotebookPreview.propTypes = {
