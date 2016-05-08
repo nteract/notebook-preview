@@ -1,7 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Router, Route, IndexRedirect, browserHistory } from 'react-router';
 
 import NotebookPreview from 'notebook-preview';
+
+import { fetchFromGist } from './fetchers';
 
 const includes = require('lodash.includes');
 
@@ -12,34 +15,43 @@ const gistIDs = [
   '0a9389389ec5ff303c5d5fbfa6bea021',
   'b71d96c48326a0e05904a5ad4a96d2b5',
   '93239f6b97237abf117a348a56afc9e2',
-  // '0787d2fd8b898368503bd9469b50383e',
-  // '35fdfae490529b47e7ea2c44c144c593',
-  // '1ba9b5d825af9e349bc3',
-  // 'd8ac62bc0726ecdc0f22', // FIXME: notebook has HTML inside Markdown
-  // 'b057942206c4e3d98153', // FIXME: notebook has inline maths
 ];
 
-const gistID = gistIDs[Math.floor(Math.random() * gistIDs.length)];
+const Main = React.createClass({
+  render: function() {
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    );
+  }
+});
 
-fetch(`https://api.github.com/gists/${gistID}`)
-  .then((data) => data.json())
-  .then((ghResponse) => {
-    for (var file in ghResponse.files) {
-      if (includes(file, '.ipynb')) {
-        const fileResponse = ghResponse.files[file];
-        if(fileResponse.truncated) {
-          // If truncated, fetch direct
-          return fetch(fileResponse.raw_url)
-                  .then((resp) => resp.json())
-        }
-
-        const nbString = fileResponse.content;
-        const nbJSON = JSON.parse(nbString);
-        return nbJSON;
-      }
+const Notebook = React.createClass({
+  getInitialState: function() {
+    return {nbJSON: null};
+  },
+  componentDidMount: function() {
+    fetchFromGist(this.props.params.gistId).then((nbJSON) => {
+      this.setState({
+        nbJSON
+      });
+    });
+  },
+  render: function() {
+    if (this.state.nbJSON) {
+      return <NotebookPreview notebook={this.state.nbJSON}/>;
+    } else {
+      return <h1>Loading Notebook...</h1>;
     }
-  })
-  .then((nbJSON) => {
-    render(<NotebookPreview notebook={nbJSON}/>,
-           document.getElementById('root'));
-  })
+  }
+});
+
+render((
+  <Router history={browserHistory}>
+    <Route path="/" component={Main}>
+      <IndexRedirect to={'gist/' + gistIDs[Math.floor(Math.random() * gistIDs.length)]}/>
+      <Route path="gist/:gistId" component={Notebook}/>
+    </Route>
+  </Router>
+), document.getElementById('root'));
