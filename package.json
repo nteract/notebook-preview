@@ -5,11 +5,14 @@
   "scripts": {
     "clean": "rimraf dist",
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:dev:webpack": "cross-env NODE_ENV=development webpack --config webpack.config.dev.js",
     "build": "npm run clean && npm run build:webpack",
+    "build:dev": "npm run clean && npm run build:dev:webpack",
     "test": "mocha --compilers js:babel-register 'spec/*.js'",
     "lint": "eslint .",
     "predeploy": "npm run build",
-    "deploy": "surge -d nb.surge.sh -p ."
+    "deploy": "surge -d nb.surge.sh -p .",
+    "dev-deploy": "npm run build:dev && surge -d nbdev.surge.sh -p ."
   },
   "repository": {
     "type": "git",
