@@ -29,6 +29,9 @@ const Main = React.createClass({
 
 const Notebook = React.createClass({
   getInitialState: function() {
+    return {nbJSON: ''};
+  },
+  componentDidMount: function() {
     fetchFromGist(this.props.params.gistId).then((nbJSON) => {
       this.setState({
         nbJSON
