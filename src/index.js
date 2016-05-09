@@ -21,7 +21,8 @@ const Main = React.createClass({
   render: function() {
     return (
       <div>
-        {this.props.children}
+        <h2>nteract Notebook Preview</h2>
+        {this.props.children && React.cloneElement(this.props.children)}
       </div>
     );
   }
@@ -50,7 +51,6 @@ const Notebook = React.createClass({
 render((
   <Router history={browserHistory}>
     <Route path="/" component={Main}>
-      <IndexRedirect to={'gist/' + gistIDs[Math.floor(Math.random() * gistIDs.length)]}/>
       <Route path="gist/:gistId" component={Notebook}/>
     </Route>
   </Router>
