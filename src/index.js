@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRedirect, browserHistory } from 'react-router';
+import { Router, Route, IndexRedirect, hashHistory} from 'react-router';
 
 import NotebookPreview from 'notebook-preview';
 
@@ -22,7 +22,7 @@ const Main = React.createClass({
     return (
       <div>
         <h2>nteract Notebook Preview</h2>
-        {this.props.children && React.cloneElement(this.props.children)}
+        {this.props.children}
       </div>
     );
   }
@@ -49,7 +49,7 @@ const Notebook = React.createClass({
 });
 
 render((
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="/" component={Main}>
       <Route path="gist/:gistId" component={Notebook}/>
     </Route>
