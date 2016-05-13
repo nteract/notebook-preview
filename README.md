@@ -10,7 +10,18 @@ import NotebookPreview from 'notebook-preview';
 ReactDOM.render(<NotebookPreview notebook={notebookJSON}/>, document.querySelector('nb'));
 ```
 
-You're going to want styles as well, which can be vendored and linked similarly to:
+## Styling
+
+In order to have parity with nteract styling, you'll want:
+
+* normalize.css
+* codemirror.css
+
+* CSS and fonts for Source Code Pro and Source Sans Pro
+* One of the themes (e.g. theme-light) or your own that implements the same CSS variables
+* `main.css` from `notebook-preview`
+
+Example setup:
 
 ```html
 <!-- Optionally, use a conventional reset like normalize -->
