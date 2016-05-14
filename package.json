@@ -4,6 +4,7 @@
   "description": "Lightweight preview of a notebook, nteract style",
   "main": "lib/index.js",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "babel src --out-dir lib",
     "pretest": "npm run build",
     "test": "mocha -r test/setup.js --compilers js:babel-core/register 'test/**/*.js'"
