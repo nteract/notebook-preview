@@ -1,7 +1,7 @@
 const includes = require('lodash.includes');
 
 export function fetchFromGist(gistId) {
-  var path = "https://api.github.com/gists/" + gistId;
+  var path = `https://api.github.com/gists/${gistId}`;
   return fetch(path)
     .then((data) => data.json())
     .then((ghResponse) => {
