@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "codemirror": "^5.14.2",
-    "commutable": "^0.7.0",
+    "commutable": "^0.9.2",
     "react-codemirror": "^0.2.6",
     "react-jupyter-display-area": "^1.0.0",
     "remark": "^4.2.2",
