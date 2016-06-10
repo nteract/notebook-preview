@@ -1,0 +1,59 @@
+{
+  "name": "notebook-preview-demo",
+  "version": "0.0.0",
+  "description": "Demoing notebook-preview, testing out CSS",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
+    "build:dev:webpack": "cross-env NODE_ENV=development webpack --config webpack.config.dev.js",
+    "build": "npm run clean && npm run build:webpack",
+    "build:dev": "npm run clean && npm run build:dev:webpack",
+    "test": "mocha --compilers js:babel-register 'spec/*.js'",
+    "lint": "eslint .",
+    "predeploy": "npm run build",
+    "deploy": "surge -d nb.surge.sh -p .",
+    "dev-deploy": "npm run build:dev && surge -d nbdev.surge.sh -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rgbkrk/notebook-preview-demo.git"
+  },
+  "keywords": [
+    "notebook"
+  ],
+  "author": "Kyle Kelley <rgbkrk@gmail.com>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/rgbkrk/notebook-preview-demo.git"
+  },
+  "homepage": "https://github.com/rgbkrk/notebook-preview-demo",
+  "devDependencies": {
+    "babel-core": "^6.6.5",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "chai": "^3.5.0",
+    "cross-env": "^1.0.7",
+    "eslint": "^2.10.1",
+    "eslint-plugin-babel": "^3.0.0",
+    "eslint-plugin-react": "^5.1.1",
+    "eventsource-polyfill": "^0.9.6",
+    "express": "^4.13.3",
+    "json-loader": "^0.5.4",
+    "rimraf": "^2.4.3",
+    "surge": "^0.18.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "codemirror": "^5.14.2",
+    "lodash.includes": "^4.1.3",
+    "node-fetch": "^1.5.2",
+    "normalize.css": "^4.1.1",
+    "notebook-preview": "^0.2.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-router": "^2.3.0"
+  }
+}
