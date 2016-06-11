@@ -5,10 +5,6 @@ import { loadMathJax, mathProcessor } from 'mathjax-electron';
 loadMathJax(document);
 
 export default class LatexRenderer extends React.Component {
-  static propTypes = {
-    children: React.PropTypes.any,
-  };
-
   componentDidMount() {
     mathProcessor(this.refs.rendered);
   }
@@ -23,3 +19,7 @@ export default class LatexRenderer extends React.Component {
     );
   }
 }
+
+LatexRenderer.propTypes = {
+  children: React.PropTypes.any,
+};
