@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/rgbkrk/notebook-preview-demo",
   "devDependencies": {
+    "babel-cli": "^6.10.1",
     "babel-core": "^6.6.5",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
