@@ -1,5 +1,7 @@
 import { expect } from 'chai';
 
+global.fetch = require('node-fetch');
+
 import { fetchFromGist } from '../src/fetchers';
 
 describe('fetchers', () => {
