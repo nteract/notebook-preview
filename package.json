@@ -47,6 +47,7 @@
   "dependencies": {
     "codemirror": "^5.14.2",
     "commutable": "^1.0.1",
+    "mathjax-electron": "^0.2.0",
     "react-codemirror": "^0.2.6",
     "react-jupyter-display-area": "^1.0.0",
     "remark": "^4.2.2",
