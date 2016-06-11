@@ -5,4 +5,4 @@ node_js:
 sudo: false
 script:
   - npm t
-  - cd demo && npm install && npm t
+  - (cd demo && npm install && npm t)
