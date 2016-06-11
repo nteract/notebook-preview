@@ -51,7 +51,7 @@
     "lodash.includes": "^4.1.3",
     "node-fetch": "^1.5.2",
     "normalize.css": "^4.1.1",
-    "notebook-preview": "^0.2.1",
+    "notebook-preview": "..",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-router": "^2.3.0"
