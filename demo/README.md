@@ -1,5 +1,8 @@
 Little demo work of `notebook-preview`.
 
-Clone this repo, open index.html.
+Clone `notebook-preview`, `cd` to `demo/`
 
+```
+npm install
+```
 
