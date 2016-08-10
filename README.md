@@ -6,6 +6,11 @@ Lightweight preview of a notebook, nteract style
 * [Demo repo](https://github.com/rgbkrk/notebook-preview-demo)
 
 ```js
+// import styles directly if using the css-loader
+import 'codemirror/lib/codemirror.css';
+import 'notebook-preview/styles/main.css';
+import 'notebook-preview/styles/theme-light.css';
+
 import NotebookPreview from 'notebook-preview';
 ReactDOM.render(<NotebookPreview notebook={notebookJSON}/>, document.querySelector('nb'));
 ```
@@ -20,6 +25,8 @@ In order to have parity with nteract styling, you'll want:
 * CSS and fonts for Source Code Pro and Source Sans Pro
 * One of the themes (e.g. theme-light) or your own that implements the same CSS variables
 * `main.css` from `notebook-preview`
+
+You can either use the CSS loader with the styles you want as above or include them in your base HTML like so:
 
 Example setup:
 
