@@ -5,6 +5,8 @@ import Inputs from './inputs';
 import Editor from './editor';
 import Display from 'react-jupyter-display-area';
 
+import LatexRenderer from '../latex';
+
 import Immutable from 'immutable';
 
 const CodeCell = (props) =>
@@ -16,12 +18,14 @@ const CodeCell = (props) =>
         language={props.language}
       />
     </div>
-    <Display
-      className="cell_display"
-      outputs={props.cell.get('outputs')}
-      displayOrder={props.displayOrder}
-      transforms={props.transforms}
-    />
+    <LatexRenderer>
+      <Display
+        className="cell_display"
+        outputs={props.cell.get('outputs')}
+        displayOrder={props.displayOrder}
+        transforms={props.transforms}
+      />
+    </LatexRenderer>
   </div>;
 
 CodeCell.propTypes = {
