@@ -1,5 +1,7 @@
 # notebook-preview
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/nteract/notebook-preview.svg)](https://greenkeeper.io/)
+
 Lightweight preview of a notebook, nteract style
 
 ## DEPRECATED!
